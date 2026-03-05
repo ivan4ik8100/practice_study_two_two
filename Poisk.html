@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang = "ru">
+<head>
+    <title> PlayBaza - Поиск </title>
+    <meta charset = "UTF-8">
+    <meta name="autor" content = "Абашин Иван">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div>
+<div>
+<header>
+    <div class = "kub-name" id="poisk_logo_text">
+    <p> PlayBaza </p> 
+    </div>
+    <a href = "Osnova1.html">
+        <div class="kub">
+            <p> Главная </p>
+        </div>
+    </a>
+    <a>
+        <div class="kub_poi" id="poisk_poisk_header">
+            <img src = "images/free-icon-magnifier-2319177.png">
+        </div>
+    </a>
+    <div class="kub hidden" id="poisk_hidden1">
+        <p> Ф </p>
+    </div>
+    <div class="kub hidden" id="poisk_hidden2">
+        <p> Ф </p>
+    </div>
+    <div class="kub hidden" id="poisk_hidden3">
+        <p> Ф </p>
+    </div>
+    <div class="kub hidden" id="poisk_hidden4">
+        <p> Ф </p>
+    </div>
+    <div class="kub_reg hidden" id="poisk_registr_button">
+        <p> Регистрация </p>
+    </div>
+    <div class="kub" id = "poisk_balance">
+        <p> 0.0 р </p>
+    </div>
+    <div class="kub_logo" id = "poisk_wallet_icon">
+        <img src = "images/free-icon-wallet-3360459.png">
+    </div>
+    <a href = "">
+    <div class="kub_logo" id="poisk_profile_icon">
+        <img src = "images/user-icon-on-transparent-background-free-png.webp">
+    </div>
+    </a>
+    <br>
+</header>
+</div>
+<div> 
+    <main>
+        <br><br><br><br><br><br>
+        <div class = "Poisk">
+            <div class="Kate1" id="poisk_filters_row">
+                <a>
+                    <div class="kub" id="poisk_recent_button">
+                        <p> Недавние </p>
+                    </div>
+                </a>
+                <a>
+                    <div class="kub" id="poisk_random_button">
+                        <p> Случайная игра </p>
+                    </div>
+                </a>
+                    <div class="kub_Vvod" id="poisk_search_container">
+                        <input type = "text" id="poisk_search_input" placeholder="Поиск по названию...">
+                    </div>
+                <div class="kub_poi" id="poisk_search_button">
+                    <img src = "images/free-icon-magnifier-2319177.png">
+                </div>
+            </div>
+            <br>
+            <div class = "Spisok1">
+                <div class="Spisok" id="poisk_games_list"></div>
+                <div class="janr" id="poisk_genre_filter"> 
+                    <h3>Жанры</h3>
+                    <form> 
+                        <label> RPG </label> <input type = "checkbox" id = "poisk_checkbox_rpg" value="RPG"> <br>
+                    <label> Экшен </label> <input type = "checkbox" id = "poisk_checkbox_action" value="Экшен"> <br>
+                    <label> Открытый мир </label> <input type = "checkbox" id = "poisk_checkbox_openworld" value="Открытый мир"> <br>
+                    <label> Фэнтези </label> <input type = "checkbox" id = "poisk_checkbox_fantasy" value="Фэнтези"> <br>
+                    <label> Киберпанк </label> <input type = "checkbox" id = "poisk_checkbox_cyber" value="Киберпанк"> <br>
+                    <label> Вестерн </label> <input type = "checkbox" id = "poisk_checkbox_western" value="Вестерн"> <br>
+                    <label> Хоррор </label> <input type = "checkbox" id = "poisk_checkbox_horror" value="Хоррор"> <br>
+                    <label> Драма </label> <input type = "checkbox" id = "poisk_checkbox_drama" value="Драма"> <br>
+                    </form>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+</div>
+<div> 
+    <aside>
+        <div class = "Podval" id="poisk_footer"> 
+            <p> Подвал </p>
+        </div>
+    </aside>
+</div>
+</div>
+<script src = "js/kode.js"> </script>
+</body>
+</html>
