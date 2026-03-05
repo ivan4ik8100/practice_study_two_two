@@ -1,0 +1,352 @@
+body {
+    background-color: #D9D9D9;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: black;
+    text-decoration: none;
+    font-family: Arial;
+}
+a:active {
+    font-weight: bold;
+}
+header {
+    display: flex;
+    position: fixed;
+    height: 80px;
+    background-color: #99d9EA;
+    z-index: 2;
+    min-width: 450px;
+    flex-flow: row nowrap;
+}
+header:not(.auth-header) {
+    width: 100%;
+    justify-content: space-between;
+}
+header.auth-header {
+    width: 60%;
+    justify-content: center;
+    border-radius: 40px;
+    justify-self: center;
+}
+.kub, .kub_reg, .kub_poi {
+    display: flex;
+    padding: 3px;
+    margin-left: 1px;
+    margin-top: 5px;
+    font-size: 110%;
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.kub {
+    width: 70px;
+    height: 50px;
+}
+.kub_reg {
+    width: 110px;
+    height: 50px;
+}
+.kub_poi {
+    width: 50px;
+    height: 50px;
+}
+.kub:hover, .kub_reg:hover, .kub_poi:hover {
+    border: 3px solid grey;
+}
+.kub:active {
+    font-weight: bold;
+}
+
+.kub-name {
+    display: flex;
+    width: 75px;
+    height: 50px;
+    padding: 2px;
+    margin-left: 1%;
+    margin-top: 3px;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.kub_logo {
+    display: flex;
+    width: 70px;
+    height: 70px;
+    padding: 3px;
+    margin-left: 0px;
+    margin-top: 5px;
+    font-size: 110%;
+}
+.kub_Vvod {
+    display: flex;
+    width: 2000px;
+    height: 50px;
+    padding: 3px;
+    margin-left: 1px;
+    margin-top: 5px;
+    font-size: 110%;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.kub_Vvod input {
+    width: 100%;
+}
+.Onas, .Poders, .Glav, .Vhod, .Zareg {
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 1px;
+    color: black;
+    font-size: 120%;
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+}
+.Onas, .Glav {
+    width: 90px;
+    height: 60px;
+    bottom: 50px;
+    left: 50px;
+}
+.Poders, .Vhod {
+    width: 90px;
+    height: 60px;
+    bottom: 50px;
+    right: 50px;
+}
+.Zareg {
+    width: 250px;
+    height: 80px;
+    bottom: 100px;
+    right: 43%;
+    font-size: 150%;
+    cursor: pointer;
+    background-color: transparent;
+}
+.Glav:hover, .Vhod:hover, .Zareg:hover, .Onas:hover, .Poders:hover {
+    color: grey;
+    border-color: grey;
+}
+.Onas:active {
+    font-weight: bold;
+}
+.hidden {
+    visibility: hidden;
+}
+.hidden1, .hidden2 {
+    display: none;
+}
+.Popular {
+    width: 60%;
+    border-radius: 35px;
+    padding: 3px;
+    height: 400px;
+    border: 3px solid black;
+    justify-self: center;
+    text-align: center;
+}
+.Spisok {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    border: 3px solid black;
+    height: 70%;
+    border-radius: 10px;
+}
+.Spisok1 {
+    display: flex;
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 125%;
+    border-radius: 10px;
+}
+.Spisok_element {
+    display: flex;
+    background-color: gray;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 100px;
+    flex-flow: row nowrap;
+    padding: 3px;
+}
+.Name, .Detals, .Kate {
+    display: flex;
+    padding: 3px;
+    margin-left: 1px;
+    margin-top: 5px;
+    font-size: 110%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.Name {
+    width: 200px;
+    margin-top: 20px;
+}
+.Detals {
+    width: 300px;
+    font-size: 70%;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.Kate {
+    width: 200px;
+    font-size: 70%;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.Kate1 {
+    display: flex;
+    width: 110%;
+    font-size: 70%;
+    flex-flow: row nowrap;
+    border: 0px solid black;
+}
+.Poisk {
+    width: 60%;
+    border-radius: 35px;
+    padding: 3px;
+    height: 500px;
+    justify-self: center;
+    text-align: center;
+    flex-flow: row nowrap;
+}
+.janr {
+    width: 13%;
+    border: 3px solid black;
+    height: 66%;
+    padding: 10px;
+}
+.Podval {
+    z-index: 997;
+    display: block;
+    position: fixed;
+    background-color: #99d9EA;
+    padding: 1px;
+    color: black;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    bottom: 0px;
+    justify-content: center;
+}
+.Polevvoda {
+    width: 60%;
+    border-radius: 35px;
+    padding: 3px;
+    max-height: 400px;
+    min-height: 200px;
+    justify-self: center;
+    text-align: center;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+.Pole {
+    width: 500px;
+    font-size: 150%;
+    border: 2px solid #D9D9D9;
+    border-radius: 10px;
+    padding: 8px 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    max-width: 90%;
+}
+.Pole:focus {
+    border-color: #99d9EA;
+    box-shadow: 0 0 5px rgba(153, 217, 234, 0.5);
+}
+#registr_login_div, #registr_email_div, #registr_password_div, #registr_password2_div,
+#vhod_login_div, #vhod_password_div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+@media screen and (max-width: 1024px) {
+    header.auth-header {
+        width: 100%;
+        border-radius: 0;
+        justify-self: stretch;
+        min-width: auto;
+    }
+    header.auth-header h1 {
+        margin: 0 auto;
+        padding: 30px;
+        font-size: 24px;
+    }
+    .Polevvoda {
+        width: 90%;
+        max-height: none;
+        min-height: auto;
+        padding: 15px 0;
+        margin-top: 100px;
+        margin-bottom: 20px;
+    }
+    .Pole {
+        width: 90%;
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+    #registr_login_div, #registr_email_div, #registr_password_div, #registr_password2_div {
+        margin: 8px 0;
+    }
+    .Zareg, .Glav, .Vhod {
+        position: static;
+        margin: 10px auto;
+        display: block;
+    }
+    aside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+        width: 100%;
+    }
+    .Zareg {
+        width: 80%;
+        max-width: 300px;
+        height: 70px;
+        font-size: 20px;
+        background-color: #D9D9D9;
+    }
+    .Vhod {
+        width: 80%;
+        max-width: 300px;
+        height: 70px;
+        font-size: 20px;
+        background-color: #D9D9D9;
+        position: static;
+        right: auto;
+        bottom: auto;
+    }
+    .Glav {
+        width: 80%;
+        max-width: 300px;
+        height: 70px;
+        font-size: 20px;
+        background-color: #D9D9D9;
+        position: static;
+        left: auto;
+        bottom: auto;
+    }
+    a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}   
