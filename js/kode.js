@@ -199,16 +199,6 @@ function initSearch() {
                 displayGames(randomGame);
             });
         }
-        
-        const recentButton = document.getElementById("poisk_recent_button");
-        if (recentButton) {
-            recentButton.addEventListener("click", function() {
-                displayGames(gamesData);
-                document.getElementById("poisk_search_input").value = "";
-                const checkboxes = document.querySelectorAll("#poisk_genre_filter input[type=\"checkbox\"]");
-                checkboxes.forEach(checkbox => checkbox.checked = false);
-            });
-        }
     }
 }
 
@@ -225,4 +215,5 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("PlayBaza - платформа для поиска и скачивания приложений");
         });
     }
+
 });
