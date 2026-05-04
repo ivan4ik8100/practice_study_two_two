@@ -72,23 +72,147 @@ function displayPopularGames() {
 //========================================================================= Регистрация
 function initRegistration() {
     const registerButton = document.getElementById("registr_knopka_zareg");
+    const maleRadio = document.getElementById("Female_Muzik");
+    const femaleRadio = document.getElementById("Female_Jensk");
+    if (maleRadio && femaleRadio) {
+        maleRadio.addEventListener("change", function() {
+            if (this.checked) {
+                this.style.transform = "scale(1.1)";
+                setTimeout(() => this.style.transform = "scale(1)", 200);
+            }
+        });
+        
+        femaleRadio.addEventListener("change", function() {
+            if (this.checked) {
+                this.style.transform = "scale(1.1)";
+                setTimeout(() => this.style.transform = "scale(1)", 200);
+            }
+        });
+    }
+    
     if (registerButton) {
         registerButton.addEventListener("click", function(event) {
+            event.preventDefault();
             const loginInput = document.getElementById("registr_login_input");
             const emailInput = document.getElementById("registr_email_input");
             const passwordInput = document.getElementById("registr_password_input");
             const password2Input = document.getElementById("registr_password2_input");
-                
-            if (loginInput.value.trim() !== "" && 
-                emailInput.value.trim() !== "" && 
-                passwordInput.value.trim() !== "" && 
-                password2Input.value.trim() !== "") {
-                    window.location.href = "Osnova1.html";
-                } else {
-                    alert("Пожалуйста, заполните все поля");
+            
+            let errorContainer = document.getElementById("error_messages");
+            
+            errorContainer.innerHTML = "";
+            removeErrorClasses([loginInput, emailInput, passwordInput, password2Input]);
+            
+            let errors = [];
+            
+            if (loginInput.value.trim() === "") {
+                errors.push("Логин не может быть пустым");
+                addErrorClass(loginInput);
+            }
+            
+            if (emailInput.value.trim() === "") {
+                errors.push("Email не может быть пустым");
+                addErrorClass(emailInput);
+            }
+            
+            if (passwordInput.value.trim() === "") {
+                errors.push("Пароль не может быть пустым");
+                addErrorClass(passwordInput);
+            }
+            
+            if (password2Input.value.trim() === "") {
+                errors.push("Подтверждение пароля не может быть пустым");
+                addErrorClass(password2Input);
+            }
+
+            if (emailInput.value.trim() !== "") {
+                if (!validateEmail(emailInput.value.trim())) {
+                    errors.push("Некорректный формат email. Пример: name@domain.com");
+                    addErrorClass(emailInput);
                 }
+            }
+
+            if (passwordInput.value.trim() !== "" && password2Input.value.trim() !== "") {
+
+                if (passwordInput.value.length < 8) {
+                    errors.push("Пароль должен содержать минимум 8 символов");
+                    addErrorClass(passwordInput);
+                    addErrorClass(password2Input);
+                }
+                
+                if (passwordInput.value !== password2Input.value) {
+                    errors.push("Пароли не совпадают");
+                    addErrorClass(passwordInput);
+                    addErrorClass(password2Input);
+                }
+            }
+            
+
+            if (!maleRadio.checked && !femaleRadio.checked) {
+                errors.push("Пожалуйста, выберите пол");
+
+                document.getElementById("gender_form").style.border = "2px solid #ff3333";
+            } else {
+                document.getElementById("gender_form").style.border = "none";
+            }
+            
+
+            if (errors.length > 0) {
+                showErrors(errorContainer, errors);
+                return;
+            }
+            
+
+            showSuccess(errorContainer, "Регистрация успешна! Перенаправляем...");
+
+            addSuccessClass([loginInput, emailInput, passwordInput, password2Input]);
+
+            setTimeout(function() {
+                window.location.href = "Osnova1.html";
+            }, 1500);
         });
     }
+}
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+function showErrors(container, errors) {
+    container.innerHTML = ""; 
+    
+    errors.forEach(function(error) {
+        const errorDiv = document.createElement("div");
+        errorDiv.className = "error-message";
+        errorDiv.textContent = "• " + error;
+        container.appendChild(errorDiv);
+    });
+}
+
+function showSuccess(container, message) {
+    container.innerHTML = ""; 
+    
+    const successDiv = document.createElement("div");
+    successDiv.className = "success-message";
+    successDiv.textContent = "✓ " + message;
+    container.appendChild(successDiv);
+}
+
+function addErrorClass(element) {
+    element.classList.add("error");
+    element.classList.remove("success");
+}
+
+function addSuccessClass(elements) {
+    elements.forEach(function(element) {
+        element.classList.add("success");
+        element.classList.remove("error");
+    });
+}
+
+function removeErrorClasses(elements) {
+    elements.forEach(function(element) {
+        element.classList.remove("error", "success");
+    });
 }
 
 //========================================================================== вход
@@ -215,5 +339,4 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("PlayBaza - платформа для поиска и скачивания приложений");
         });
     }
-
 });
